@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="601.0" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.mpeiRZA.MainPageController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Файл">
+            <items>
+              <MenuItem fx:id="OpenTheFile" mnemonicParsing="false" onAction="#OpenFile" text="Открыть CID файл" />
+               <MenuItem mnemonicParsing="false" text="Сохранить файл" />
+               <MenuItem mnemonicParsing="false" text="Закрыть проект" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Вид">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Табличный вид" />
+               <MenuItem mnemonicParsing="false" text="Древовидный вид" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Помощь">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <bottom>
+      <TextFlow fx:id="myText" prefHeight="91.0" prefWidth="601.0" BorderPane.alignment="CENTER" />
+   </bottom>
+   <center>
+      <SplitPane dividerPositions="0.35392320534223703" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <items>
+            <TreeView fx:id="treeView" prefHeight="296.0" prefWidth="318.0" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+         </items>
+      </SplitPane>
+   </center>
+</BorderPane>
