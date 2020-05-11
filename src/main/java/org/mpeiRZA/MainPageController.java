@@ -15,7 +15,7 @@ import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class MainPageController implements Initializable {
+public class MainPageController  implements Initializable{
 
     public TextFlow myText;
     public MenuItem OpenTheFile;
@@ -23,12 +23,17 @@ public class MainPageController implements Initializable {
     final FileChooser fileChooser = new FileChooser();
     public File file;
     @FXML public TreeView<String> treeView;
+    private static MainPageController self;
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        Text txt = new Text("Программа запущена");
-        myText.getChildren().add(txt);
+    public MainPageController() {
+        self = this;
     }
+
+    public static void writeLog(String msg) {
+        Text txt = new Text("\n" + msg);
+        self.myText.getChildren().add(txt);
+    }
+
 
     public void OpenFile(ActionEvent actionEvent) {
         file = fileChooser.showOpenDialog(null);
@@ -50,5 +55,11 @@ public class MainPageController implements Initializable {
 
             treeView.setRoot(Languages);
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        Text txt = new Text("Программа запущена");
+        self.myText.getChildren().add(txt);
     }
 }

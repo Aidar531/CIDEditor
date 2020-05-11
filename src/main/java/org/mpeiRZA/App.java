@@ -35,10 +35,13 @@ public class App extends Application {
 
     @Override
     public void start(Stage stage) throws IOException, URISyntaxException {
+
         scene = new Scene(loadFXML("MainPage"), 1000, 600);
         stage.setTitle("CIDEditor");
         stage.setScene(scene);
         stage.show();
+        MainPageController.writeLog("Hi,bitch");
+
     }
 
     static void setRoot(String fxml) throws IOException {
