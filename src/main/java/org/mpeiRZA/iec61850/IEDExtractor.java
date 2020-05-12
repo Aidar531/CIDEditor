@@ -1,6 +1,7 @@
 package org.mpeiRZA.iec61850;
 
 import Services.*;
+import org.mpeiRZA.Controllers.MainPageController;
 
 
 import java.lang.reflect.Field;
@@ -34,7 +35,7 @@ public class IEDExtractor {
      */
     private static IED extractIED(TIED source){
         IED ied = new IED();
-//        if(source.getName()==null) { GUI.writeErrMessage("IED:  "+ ied + "- is not contain name"); }
+        if(source.getName()==null) { MainPageController.writeLog("IED:  " + ied + "- is not contain name"); }
         ied.setName(source.getName()!=null ? source.getName() : "unknown");
         ied.setDescription(source.getDesc()!=null ? source.getDesc() : "unknown");
 
@@ -43,7 +44,9 @@ public class IEDExtractor {
             List<TLDevice> logicalDeviceList = source.getAccessPoint().get(0).getServer().getLDevice();
             for(TLDevice tld:logicalDeviceList) Optional.ofNullable(extractLD(tld)).ifPresent(ied.getLogicalDeviceList()::add);
         }
-        catch (Exception ignored) { }
+        catch (Exception e) {
+            MainPageController.writeLog(String.format("IED: %s is not contain logical devices", StringOf(source)));
+        }
 
         return ied;
     }
@@ -55,7 +58,7 @@ public class IEDExtractor {
      */
     private static LD extractLD(TLDevice source){
         LD ld = new LD();
-//        if(source.getLdName()==null) { GUI.writeErrMessage("LD:  "+ StringOf(source) + "- is not contain name"); }
+        if(source.getLdName()==null) { MainPageController.writeLog("LD:  "+ StringOf(source) + "- is not contain name"); }
         ld.setName(source.getLdName()!=null ? source.getLdName() : "unknown");
         ld.setDescription(source.getDesc()!=null ? source.getDesc(): "unknown");
 
@@ -75,8 +78,8 @@ public class IEDExtractor {
 
             for(TGSEControl gseCtrlBlock:outputGooseList){
                 DS ds = new DS();
-//                if(gseCtrlBlock.getName()==null) GUI.writeErrMessage(String.format("%s DataSet: GSEControlBlock  %s - is not contain name", DSType.GOOSE_Output.toString(), StringOf(gseCtrlBlock)));
-//                if(gseCtrlBlock.getDatSet()==null) GUI.writeErrMessage(String.format("%s DataSet: GSEControlBlock  %s - is not contain DatSet name", DSType.GOOSE_Output.toString(), StringOf(gseCtrlBlock)));
+                if(gseCtrlBlock.getName()==null) MainPageController.writeLog(String.format("%s DataSet: GSEControlBlock  %s - is not contain name", DSType.GOOSE_Output.toString(), StringOf(gseCtrlBlock)));
+                if(gseCtrlBlock.getDatSet()==null) MainPageController.writeLog(String.format("%s DataSet: GSEControlBlock  %s - is not contain DatSet name", DSType.GOOSE_Output.toString(), StringOf(gseCtrlBlock)));
                 ds.setType(DSType.GOOSE_Output);
                 ds.setName(gseCtrlBlock.getName()!=null ? gseCtrlBlock.getName() : "unknown");
                 ds.setDatSetName(gseCtrlBlock.getDatSet()!=null ? gseCtrlBlock.getDatSet() : "unknown");
@@ -91,8 +94,8 @@ public class IEDExtractor {
                             if(obj.getClass()==TFCDA.class){
                                 TFCDA tfcda = ((TFCDA) obj);
                                 DO dataObject = new DO();
-//                                if(tfcda.getDoName()==null) GUI.writeErrMessage(String.format("%s DataSet, Data Object:  %s - is not contain name", DSType.GOOSE_Output.toString(), StringOf(tfcda)));
-//                                if(tfcda.getDaName()==null) GUI.writeErrMessage(String.format("%s DataSet, Data Object:  %s - is not contain attribute name", DSType.GOOSE_Output.toString(), StringOf(tfcda)));
+                                if(tfcda.getDoName()==null) MainPageController.writeLog(String.format("%s DataSet, Data Object:  %s - is not contain name", DSType.GOOSE_Output.toString(), StringOf(tfcda)));
+//                                if(tfcda.getDaName()==null) MainPageController.writeLog(String.format("%s DataSet, Data Object:  %s - is not contain attribute name", DSType.GOOSE_Output.toString(), StringOf(tfcda)));
                                 dataObject.setDataObjectName(tfcda.getDoName()!=null ? tfcda.getDoName(): "unknown");
                                 dataObject.setDataAttributeName(tfcda.getDaName()!=null ? tfcda.getDaName(): "unknown");
                                 dataObjectList.add(dataObject);
@@ -120,8 +123,8 @@ public class IEDExtractor {
 
             for(TExtRef tExtRef:extRefList){
                 DO dataObject = new DO();
-//                if(tExtRef.getDoName()==null) GUI.writeErrMessage(String.format("%s DataSet, Data Object:  %s - is not contain name", DSType.GOOSE_Input.toString(), StringOf(tExtRef)));
-//                if(tExtRef.getDaName()==null) GUI.writeErrMessage(String.format("%s DataSet, Data Object:  %s - is not contain attribute name", DSType.GOOSE_Input.toString(), StringOf(tExtRef)));
+                if(tExtRef.getDoName()==null) MainPageController.writeLog(String.format("%s DataSet, Data Object:  %s - is not contain name", DSType.GOOSE_Input.toString(), StringOf(tExtRef)));
+//                if(tExtRef.getDaName()==null) MainPageController.writeLog(String.format("%s DataSet, Data Object:  %s - is not contain attribute name", DSType.GOOSE_Input.toString(), StringOf(tExtRef)));
                 dataObject.setDataObjectName(tExtRef.getDoName()!=null ? tExtRef.getDoName(): "unknown");
                 dataObject.setDataAttributeName(tExtRef.getDaName()!=null ? tExtRef.getDaName(): "unknown");
                 dataSet.getDataObject().add(dataObject);
@@ -139,8 +142,8 @@ public class IEDExtractor {
                 DS ds = new DS();
                 ds.setType(DSType.MMS_Output);
 
-//                if(reportCtrlBlock.getName()==null) GUI.writeErrMessage(String.format("%s DataSet:  %s - is not contain name", DSType.MMS_Output.toString(), StringOf(reportCtrlBlock)));
-//                if(reportCtrlBlock.getDatSet()==null) GUI.writeErrMessage(String.format("%s DataSet:  %s - is not contain DatSet name", DSType.MMS_Output.toString(), StringOf(reportCtrlBlock)));
+                if(reportCtrlBlock.getName()==null) MainPageController.writeLog(String.format("%s DataSet:  %s - is not contain name", DSType.MMS_Output.toString(), StringOf(reportCtrlBlock)));
+                if(reportCtrlBlock.getDatSet()==null) MainPageController.writeLog(String.format("%s DataSet:  %s - is not contain DatSet name", DSType.MMS_Output.toString(), StringOf(reportCtrlBlock)));
                 ds.setName(reportCtrlBlock.getName()!=null ? reportCtrlBlock.getName() : "unknown");
                 ds.setDatSetName(reportCtrlBlock.getDatSet()!=null ? reportCtrlBlock.getDatSet() : "unknown");
                 ds.setDescription(reportCtrlBlock.getDesc()!=null ? reportCtrlBlock.getDesc() : "unknown");
@@ -154,8 +157,8 @@ public class IEDExtractor {
                             if(obj.getClass()==TFCDA.class){
                                 TFCDA tfcda = ((TFCDA) obj);
                                 DO dataObject = new DO();
-//                                if(tfcda.getDoName()==null) GUI.writeErrMessage(String.format("%s DataSet, Data Object:  %s - is not contain name", DSType.MMS_Output.toString(), StringOf(tfcda)));
-//                                if(tfcda.getDaName()==null) GUI.writeErrMessage(String.format("%s DataSet, Data Object:  %s - is not contain attribute name", DSType.MMS_Output.toString(), StringOf(tfcda)));
+                                if(tfcda.getDoName()==null) MainPageController.writeLog(String.format("%s DataSet, Data Object:  %s - is not contain name", DSType.MMS_Output.toString(), StringOf(tfcda)));
+//                                if(tfcda.getDaName()==null) MainPageController.writeLog(String.format("%s DataSet, Data Object:  %s - is not contain attribute name", DSType.MMS_Output.toString(), StringOf(tfcda)));
                                 dataObject.setDataObjectName(tfcda.getDoName()!=null ? tfcda.getDoName(): "unknown");
                                 dataObject.setDataAttributeName(tfcda.getDaName()!=null ? tfcda.getDaName(): "unknown");
                                 dataObjectList.add(dataObject);
@@ -180,7 +183,7 @@ public class IEDExtractor {
      */
     private static LN extractLN(TLN source){
         LN ln = new LN();
-//        if(source.getLnType()==null) { GUI.writeErrMessage("LN:  "+ StringOf(source) + "- is not contain type"); }
+        if(source.getLnType()==null) { MainPageController.writeLog("LN:  "+ StringOf(source) + "- is not contain type"); }
         ln.setClassType((source.getLnClass()!=null && source.getLnClass().size()>0 && source.getLnClass().get(0)!=null) ? source.getLnClass().get(0) : "unknown");
         ln.setName(source.getLnType()!=null ? source.getLnType() : ln.getClassType());
         ln.setDescription(source.getDesc()!=null ? source.getDesc() : "unknown");

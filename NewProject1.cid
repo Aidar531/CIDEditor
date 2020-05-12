@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<SCL xmlns="http://www.iec.ch/61850/2006/SCL">
+    <Private type="SchneiderElectric-SFT-Key">9A337527F5C70A4B7F983C3A32F376FA</Private>
+    <Private type="SchneiderElectric-SFT-EditTime">2020-03-02 17:56:56</Private>
+    <Private type="SchneiderElectric-SFT-Version">3.2.0</Private>
+    <Header id="" version="4.0.2" revision="" toolID="CET850 v2.0" nameStructure="IEDName">
+        <History>
+            <Hitem version="V1" revision="0" when="2020-03-02" who="CET850Config" what="Draft 1"/>
+        </History>
+    </Header>
+    <IED name="13514353145" desc="Just first IED 1">
+        <Services>
+            <DynAssociation/>
+            <GetDirectory/>
+            <GetDataObjectDefinition/>
+            <GetDataSetValue/>
+            <DataSetDirectory/>
+            <ReadWrite/>
+            <TimerActivatedControl/>
+            <GetCBValues/>
+            <GSEDir/>
+            <GOOSE max="5"/>
+            <GSSE max="5"/>
+            <FileHandling/>
+            <ConfLNs fixPrefix="true" fixLnInst="true"/>
+        </Services>
+        <AccessPoint name="accessPoint1">
+            <Server>
+                <Authentication/>
+                <LDevice inst="PROT" ldName="Device_1" desc="Just device 1">
+                    <LN0 lnClass="LLN0" inst="1" lnType="LLN01">
+                        <DataSet name="DATA1">
+                            <FCDA ldInst="PROT" prefix="S" lnClass="XCBR" lnInst="1" doName="Pos" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="SP16" lnClass="GAPC" lnInst="1" doName="Ind1" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="SP16" lnClass="GAPC" lnInst="1" doName="Ind2" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="SP16" lnClass="GAPC" lnInst="1" doName="Ind3" fc="ST"/>
+                        </DataSet>
+                        <DataSet name="RTDS">
+                            <FCDA ldInst="PROT" prefix="ZMR" lnClass="PDIS" lnInst="1" doName="Op" daName="general" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZMRA" lnClass="PDIS" lnInst="3" doName="Op" daName="general" fc="ST"/>
+                        </DataSet>
+                        <DataSet name="dz">
+                            <FCDA ldInst="PROT" prefix="ZMRA" lnClass="PDIS" lnInst="3" doName="Op" daName="general" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZMRA" lnClass="PDIS" lnInst="5" doName="Str" daName="general" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZMRA" lnClass="PDIS" lnInst="5" doName="Str" daName="dirPhsB" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZMRA" lnClass="PDIS" lnInst="5" doName="Str" daName="dirPhsA" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZMRA" lnClass="PDIS" lnInst="5" doName="Str" daName="dirGeneral" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZCRW" lnClass="PSCH" lnInst="1" doName="Op" daName="phsC" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZCRW" lnClass="PSCH" lnInst="1" doName="Op" daName="phsB" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZCRW" lnClass="PSCH" lnInst="1" doName="Op" daName="phsA" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZCRW" lnClass="PSCH" lnInst="1" doName="Op" daName="general" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="PH" lnClass="PIOC" lnInst="1" doName="Op" daName="general" fc="ST"/>
+                        </DataSet>
+                        <DataSet name="Security">
+                            <FCDA ldInst="SYS" prefix="A" lnClass="GSAL" lnInst="1" doName="AcsCtlFail" fc="ST"/>
+                            <FCDA ldInst="SYS" prefix="A" lnClass="GSAL" lnInst="1" doName="AuthFail" fc="ST"/>
+                            <FCDA ldInst="SYS" prefix="A" lnClass="GSAL" lnInst="1" doName="Ina" fc="ST"/>
+                            <FCDA ldInst="SYS" prefix="A" lnClass="GSAL" lnInst="1" doName="SvcViol" fc="ST"/>
+                            <FCDA ldInst="SYS" prefix="A" lnClass="GSAL" lnInst="1" doName="NumCntRs" fc="ST"/>
+                            <FCDA ldInst="SYS" prefix="A" lnClass="GSAL" lnInst="1" doName="OpCntRs" fc="ST"/>
+                        </DataSet>
+                        <DataSet name="MeasFlt">
+                            <FCDA ldInst="MON" prefix="C" lnClass="MMXU" lnInst="1" doName="A" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="C" lnClass="MSQI" lnInst="1" doName="SeqA" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="C" lnClass="MMXU" lnInst="2" doName="A" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="C" lnClass="MSQI" lnInst="2" doName="SeqA" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="V" lnClass="MMXU" lnInst="1" doName="PPV" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="VN" lnClass="MMXU" lnInst="1" doName="PhV" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="V" lnClass="MSQI" lnInst="1" doName="SeqV" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="Amp" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="Hz" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="PwrFact" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="Watt" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="Vol" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="VolAmp" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="VolAmpr" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="C" lnClass="MMXU" lnInst="3" doName="A" fc="MX"/>
+                        </DataSet>
+                        <ReportControl rptID="AA1G1Q01A1LD0/LLN0.rcbMeasFlt" confRev="300" buffered="true" bufTime="100" intgPd="3000" datSet="MeasFlt" name="rcbMeasFlt">
+                            <TrgOps dchg="true" qchg="true"/>
+                            <OptFields/>
+                            <RptEnabled max="2">
+<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC1" ldInst="LD0"/>
+<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC2" ldInst="LD0"/>
+                            </RptEnabled>
+                        </ReportControl>
+                        <ReportControl rptID="AA1G1Q01A1LD0/LLN0.rcbSecurity" confRev="200" buffered="true" bufTime="100" intgPd="3000" datSet="Security" name="rcbSecurity">
+                            <TrgOps dchg="true" qchg="true"/>
+                            <OptFields/>
+                            <RptEnabled max="2">
+<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC1" ldInst="LD0"/>
+<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC2" ldInst="LD0"/>
+                            </RptEnabled>
+                        </ReportControl>
+                        <Inputs>
+                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.1.Value,140,13" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.1.Value,140,100" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.1.Value,140,32" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.2.Value,140,13" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.2.Value,140,100" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.2.Value,140,32" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.3.Value,140,13" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.3.Value,140,100" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.3.Value,140,32" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="stVal" intAddr="/DPC/ST/Dbpos/+/dchg/+/App4.GOOSERX.1.IN.3.Value,141,12" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL"/>
+                            <ExtRef daName="q" intAddr="/DPC/ST/Quality/+/qchg/+/App4.GOOSERX.1.IN.3.Value,141,100" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL"/>
+                            <ExtRef daName="t" intAddr="/DPC/ST/Timestamp/+/none/+/App4.GOOSERX.1.IN.3.Value,141,32" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL"/>
+                            <ExtRef daName="general" intAddr="/ACT/ST/BOOLEAN/+/dchg/+/-1,-1,-1" doName="Op" prefix="ZMR" lnClass="PDIS" lnInst="1" iedName="AA1G1Q02A1" ldInst="PROT"/>
+                            <ExtRef daName="general" intAddr="/ACT/ST/BOOLEAN/+/dchg/+/-1,-1,-1" doName="Op" prefix="ZMRA" lnClass="PDIS" lnInst="3" iedName="AA1G1Q02A1" ldInst="PROT"/>
+                        </Inputs>
+                        <GSEControl appID="AA1G1Q02A1LD0/LLN0.gcbDATA1" confRev="100" datSet="DATA1" name="gcbDATA1">
+                            <IEDName>AA1G1Q01A1</IEDName>
+                        </GSEControl>
+                        <GSEControl appID="AA1G1Q02A1LD0/LLN0.RTDS" confRev="100" datSet="RTDS" name="RTDS">
+                            <IEDName>AA1G1Q01A1</IEDName>
+                        </GSEControl>
+                        <GSEControl appID="AA1G1Q01A1PROT/LLN0.gcbdz" confRev="100" datSet="dz" name="gcbdz">
+                            <IEDName>AA1G1Q02A1</IEDName>
+                        </GSEControl>
+                    </LN0>
+                    <LN lnClass="PDIF" inst="1" lnType="PDIF1" desc="Just PDIF"/>
+                    <LN lnClass="IRMXU" inst="1" lnType="IRMXU1" desc="Just IRMXU"/>
+                    <LN lnClass="PHAR" inst="1" lnType="PHAR1" desc="Just PHAR"/>
+                    <LN lnClass="PTRC" inst="1" lnType="PTRC1" desc="Just PTRC"/>
+                    <LN lnClass="SVTR" inst="1" lnType="SVTR1" desc="Just SVTR"/>
+                </LDevice>
+            </Server>
+        </AccessPoint>
+    </IED>
+    <IED name="TestIED 2" desc="Just first IED 2">
+        <Services>
+            <DynAssociation/>
+            <GetDirectory/>
+            <GetDataObjectDefinition/>
+            <GetDataSetValue/>
+            <DataSetDirectory/>
+            <ReadWrite/>
+            <TimerActivatedControl/>
+            <GetCBValues/>
+            <GSEDir/>
+            <GOOSE max="5"/>
+            <GSSE max="5"/>
+            <FileHandling/>
+            <ConfLNs fixPrefix="true" fixLnInst="true"/>
+        </Services>
+        <AccessPoint name="accessPoint1">
+            <Server>
+                <Authentication/>
+                <LDevice inst="PROT" ldName="Device_2" desc="Just device 2">
+                    <LN0 lnClass="LLN0" inst="1" lnType="LLN01">
+                        <DataSet name="DATA1">
+                            <FCDA ldInst="PROT" prefix="S" lnClass="XCBR" lnInst="1" doName="Pos" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="SP16" lnClass="GAPC" lnInst="1" doName="Ind1" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="SP16" lnClass="GAPC" lnInst="1" doName="Ind2" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="SP16" lnClass="GAPC" lnInst="1" doName="Ind3" fc="ST"/>
+                        </DataSet>
+                        <DataSet name="RTDS">
+                            <FCDA ldInst="PROT" prefix="ZMR" lnClass="PDIS" lnInst="1" doName="Op" daName="general" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZMRA" lnClass="PDIS" lnInst="3" doName="Op" daName="general" fc="ST"/>
+                        </DataSet>
+                        <DataSet name="dz">
+                            <FCDA ldInst="PROT" prefix="ZMRA" lnClass="PDIS" lnInst="3" doName="Op" daName="general" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZMRA" lnClass="PDIS" lnInst="5" doName="Str" daName="general" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZMRA" lnClass="PDIS" lnInst="5" doName="Str" daName="dirPhsB" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZMRA" lnClass="PDIS" lnInst="5" doName="Str" daName="dirPhsA" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZMRA" lnClass="PDIS" lnInst="5" doName="Str" daName="dirGeneral" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZCRW" lnClass="PSCH" lnInst="1" doName="Op" daName="phsC" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZCRW" lnClass="PSCH" lnInst="1" doName="Op" daName="phsB" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZCRW" lnClass="PSCH" lnInst="1" doName="Op" daName="phsA" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="ZCRW" lnClass="PSCH" lnInst="1" doName="Op" daName="general" fc="ST"/>
+                            <FCDA ldInst="PROT" prefix="PH" lnClass="PIOC" lnInst="1" doName="Op" daName="general" fc="ST"/>
+                        </DataSet>
+                        <DataSet name="Security">
+                            <FCDA ldInst="SYS" prefix="A" lnClass="GSAL" lnInst="1" doName="AcsCtlFail" fc="ST"/>
+                            <FCDA ldInst="SYS" prefix="A" lnClass="GSAL" lnInst="1" doName="AuthFail" fc="ST"/>
+                            <FCDA ldInst="SYS" prefix="A" lnClass="GSAL" lnInst="1" doName="Ina" fc="ST"/>
+                            <FCDA ldInst="SYS" prefix="A" lnClass="GSAL" lnInst="1" doName="SvcViol" fc="ST"/>
+                            <FCDA ldInst="SYS" prefix="A" lnClass="GSAL" lnInst="1" doName="NumCntRs" fc="ST"/>
+                            <FCDA ldInst="SYS" prefix="A" lnClass="GSAL" lnInst="1" doName="OpCntRs" fc="ST"/>
+                        </DataSet>
+                        <DataSet name="MeasFlt">
+                            <FCDA ldInst="MON" prefix="C" lnClass="MMXU" lnInst="1" doName="A" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="C" lnClass="MSQI" lnInst="1" doName="SeqA" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="C" lnClass="MMXU" lnInst="2" doName="A" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="C" lnClass="MSQI" lnInst="2" doName="SeqA" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="V" lnClass="MMXU" lnInst="1" doName="PPV" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="VN" lnClass="MMXU" lnInst="1" doName="PhV" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="V" lnClass="MSQI" lnInst="1" doName="SeqV" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="Amp" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="Hz" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="PwrFact" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="Watt" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="Vol" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="VolAmp" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="CV" lnClass="MMXN" lnInst="1" doName="VolAmpr" fc="MX"/>
+                            <FCDA ldInst="MON" prefix="C" lnClass="MMXU" lnInst="3" doName="A" fc="MX"/>
+                        </DataSet>
+                        <ReportControl rptID="AA1G1Q01A1LD0/LLN0.rcbMeasFlt" confRev="300" buffered="true" bufTime="100" intgPd="3000" datSet="MeasFlt" name="rcbMeasFlt">
+                            <TrgOps dchg="true" qchg="true"/>
+                            <OptFields/>
+                            <RptEnabled max="2">
+<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC1" ldInst="LD0"/>
+<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC2" ldInst="LD0"/>
+                            </RptEnabled>
+                        </ReportControl>
+                        <ReportControl rptID="AA1G1Q01A1LD0/LLN0.rcbSecurity" confRev="200" buffered="true" bufTime="100" intgPd="3000" datSet="Security" name="rcbSecurity">
+                            <TrgOps dchg="true" qchg="true"/>
+                            <OptFields/>
+                            <RptEnabled max="2">
+<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC1" ldInst="LD0"/>
+<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC2" ldInst="LD0"/>
+                            </RptEnabled>
+                        </ReportControl>
+                        <Inputs>
+                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.1.Value,140,13" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.1.Value,140,100" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.1.Value,140,32" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.2.Value,140,13" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.2.Value,140,100" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.2.Value,140,32" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.3.Value,140,13" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.3.Value,140,100" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.3.Value,140,32" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
+                            <ExtRef daName="stVal" intAddr="/DPC/ST/Dbpos/+/dchg/+/App4.GOOSERX.1.IN.3.Value,141,12" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL"/>
+                            <ExtRef daName="q" intAddr="/DPC/ST/Quality/+/qchg/+/App4.GOOSERX.1.IN.3.Value,141,100" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL"/>
+                            <ExtRef daName="t" intAddr="/DPC/ST/Timestamp/+/none/+/App4.GOOSERX.1.IN.3.Value,141,32" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL"/>
+                            <ExtRef daName="general" intAddr="/ACT/ST/BOOLEAN/+/dchg/+/-1,-1,-1" doName="Op" prefix="ZMR" lnClass="PDIS" lnInst="1" iedName="AA1G1Q02A1" ldInst="PROT"/>
+                            <ExtRef daName="general" intAddr="/ACT/ST/BOOLEAN/+/dchg/+/-1,-1,-1" doName="Op" prefix="ZMRA" lnClass="PDIS" lnInst="3" iedName="AA1G1Q02A1" ldInst="PROT"/>
+                        </Inputs>
+                        <GSEControl appID="AA1G1Q02A1LD0/LLN0.gcbDATA1" confRev="100" datSet="DATA1" name="gcbDATA1">
+                            <IEDName>AA1G1Q01A1</IEDName>
+                        </GSEControl>
+                        <GSEControl appID="AA1G1Q02A1LD0/LLN0.RTDS" confRev="100" datSet="RTDS" name="RTDS">
+                            <IEDName>AA1G1Q01A1</IEDName>
+                        </GSEControl>
+                        <GSEControl appID="AA1G1Q01A1PROT/LLN0.gcbdz" confRev="100" datSet="dz" name="gcbdz">
+                            <IEDName>AA1G1Q02A1</IEDName>
+                        </GSEControl>
+                    </LN0>
+                    <LN lnClass="PDIF" inst="1" lnType="PDIF1" desc="Just PDIF"/>
+                    <LN lnClass="IRMXU" inst="1" lnType="IRMXU1" desc="Just IRMXU"/>
+                    <LN lnClass="PHAR" inst="1" lnType="PHAR1" desc="Just PHAR"/>
+                    <LN lnClass="PTRC" inst="1" lnType="PTRC1" desc="Just PTRC"/>
+                    <LN lnClass="SVTR" inst="1" lnType="SVTR1" desc="Just SVTR"/>
+                </LDevice>
+            </Server>
+        </AccessPoint>
+    </IED>
+</SCL>

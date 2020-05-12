@@ -13,11 +13,11 @@ import java.util.List;
 public class TRptEnabled
     extends TUnNaming
 {
+    @XmlAttribute(name = "max")
+    protected Long max;
 
     @XmlElement(name = "ClientLN", namespace = "http://www.iec.ch/61850/2006/SCL")
     protected List<TClientLN> clientLN;
-    @XmlAttribute(name = "max")
-    protected Long max;
 
     public List<TClientLN> getClientLN() {
         if (clientLN == null) {

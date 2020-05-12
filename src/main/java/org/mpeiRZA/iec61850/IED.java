@@ -20,6 +20,14 @@ import java.util.UUID;
 @XmlAccessorType(XmlAccessType.FIELD)
 public class IED {
 
+    public String getName() {
+        return name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
     private String name;
 
     public void setName(String name) {
