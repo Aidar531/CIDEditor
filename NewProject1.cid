@@ -8,13 +8,13 @@
             <Hitem version="V1" revision="0" when="2020-03-02" who="CET850Config" what="Draft 1"/>
         </History>
     </Header>
-    <IED name="13514353145" desc="Just first IED 1">
+    <IED name="TestIED 1" desc="Just first IED 1">
         <Services>
             <DynAssociation/>
             <GetDirectory/>
             <GetDataObjectDefinition/>
             <GetDataSetValue/>
-            <DataSetDirectory/>
+            <DynDataSet/>
             <ReadWrite/>
             <TimerActivatedControl/>
             <GetCBValues/>
@@ -80,16 +80,16 @@
                             <TrgOps dchg="true" qchg="true"/>
                             <OptFields/>
                             <RptEnabled max="2">
-<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC1" ldInst="LD0"/>
-<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC2" ldInst="LD0"/>
+                                <ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC1" ldInst="LD0"/>
+                                <ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC2" ldInst="LD0"/>
                             </RptEnabled>
                         </ReportControl>
                         <ReportControl rptID="AA1G1Q01A1LD0/LLN0.rcbSecurity" confRev="200" buffered="true" bufTime="100" intgPd="3000" datSet="Security" name="rcbSecurity">
                             <TrgOps dchg="true" qchg="true"/>
                             <OptFields/>
                             <RptEnabled max="2">
-<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC1" ldInst="LD0"/>
-<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC2" ldInst="LD0"/>
+                                <ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC1" ldInst="LD0"/>
+                                <ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC2" ldInst="LD0"/>
                             </RptEnabled>
                         </ReportControl>
                         <Inputs>

@@ -1,5 +1,6 @@
 package org.mpeiRZA.iec61850;
 
+import Services.TServices;
 import lombok.Data;
 
 import javax.xml.bind.annotation.XmlAccessType;
@@ -19,6 +20,17 @@ import java.util.UUID;
 @Data
 @XmlAccessorType(XmlAccessType.FIELD)
 public class IED {
+
+    @XmlElement(name = "Services")
+    private TServices Services;
+
+    public TServices getServices() {
+        return Services;
+    }
+
+    public void setServices(TServices services) {
+        Services = services;
+    }
 
     public String getName() {
         return name;

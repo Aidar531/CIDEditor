@@ -10,5 +10,4 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "tServiceYesNo", namespace = "http://www.iec.ch/61850/2006/SCL")
 public class TServiceYesNo {
 
-
 }

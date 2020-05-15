@@ -20,6 +20,10 @@ import java.util.UUID;
 @XmlRootElement(name = "LN")
 public class LN {
 
+    public String getName() {
+        return name;
+    }
+
     private String name;
     private String description;
 

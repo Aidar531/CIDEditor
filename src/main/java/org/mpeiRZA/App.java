@@ -40,7 +40,7 @@ public class App extends Application {
         stage.setTitle("CIDEditor");
         stage.setScene(scene);
         stage.show();
-//        stage.getIcons().add(new Image(getClass().getResource("img/iec.png").toURI().toString()));
+        stage.getIcons().add(new Image(getClass().getResource("img/iec.png").toURI().toString()));
     }
 
     static void setRoot(String fxml) throws IOException {

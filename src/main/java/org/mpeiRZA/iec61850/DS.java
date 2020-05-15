@@ -18,6 +18,11 @@ import java.util.UUID;
 public class DS {
 
     private String name;
+
+    public String getName() {
+        return name;
+    }
+
     private String description;
     private DSType type = DSType.Node;
 

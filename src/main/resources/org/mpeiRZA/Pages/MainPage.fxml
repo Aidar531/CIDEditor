@@ -11,7 +11,7 @@
           <Menu mnemonicParsing="false" text="Файл">
             <items>
               <MenuItem fx:id="OpenTheFile" mnemonicParsing="false" onAction="#OpenFile" text="Открыть CID файл" />
-               <MenuItem  mnemonicParsing="false" onAction="#SaveTheFile" text="Сохранить файл" />
+               <MenuItem mnemonicParsing="false" onAction="#SaveTheFile" text="Сохранить файл" />
                <MenuItem mnemonicParsing="false" text="Закрыть проект" />
             </items>
           </Menu>
@@ -30,10 +30,11 @@
       </MenuBar>
    </top>
    <center>
-      <SplitPane dividerPositions="0.35392320534223703" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
          <items>
             <TreeView fx:id="treeView" prefHeight="296.0" prefWidth="318.0" />
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+            <TabPane fx:id="TabView" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+            </TabPane>
          </items>
       </SplitPane>
    </center>

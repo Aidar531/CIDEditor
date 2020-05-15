@@ -36,6 +36,7 @@ public class IEDExtractor {
     private static IED extractIED(TIED source){
         IED ied = new IED();
         if(source.getName()==null) { MainPageController.writeLog("IED:  " + ied + "- is not contain name"); }
+        ied.setServices(source.getServices());
         ied.setName(source.getName()!=null ? source.getName() : "unknown");
         ied.setDescription(source.getDesc()!=null ? source.getDesc() : "unknown");
 
@@ -56,6 +57,7 @@ public class IEDExtractor {
      * @param source - TLDevice
      * @return - LD
      */
+
     private static LD extractLD(TLDevice source){
         LD ld = new LD();
         if(source.getLdName()==null) { MainPageController.writeLog("LD:  "+ StringOf(source) + "- is not contain name"); }
@@ -129,7 +131,6 @@ public class IEDExtractor {
                 dataObject.setDataAttributeName(tExtRef.getDaName()!=null ? tExtRef.getDaName(): "unknown");
                 dataSet.getDataObject().add(dataObject);
             }
-
             dataSetList.add(dataSet);
         }
 
@@ -141,6 +142,7 @@ public class IEDExtractor {
             for(TReportControl reportCtrlBlock:outputMMSList){
                 DS ds = new DS();
                 ds.setType(DSType.MMS_Output);
+                ds.setName("MMS_Out");
 
                 if(reportCtrlBlock.getName()==null) MainPageController.writeLog(String.format("%s DataSet:  %s - is not contain name", DSType.MMS_Output.toString(), StringOf(reportCtrlBlock)));
                 if(reportCtrlBlock.getDatSet()==null) MainPageController.writeLog(String.format("%s DataSet:  %s - is not contain DatSet name", DSType.MMS_Output.toString(), StringOf(reportCtrlBlock)));

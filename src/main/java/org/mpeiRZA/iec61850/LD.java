@@ -66,4 +66,8 @@ public class LD {
     @XmlTransient
     private String ID;
     public LD(){ ID = UUID.randomUUID().toString(); }
+
+    public String getName() {
+        return name;
+    }
 }
