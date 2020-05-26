@@ -2,12 +2,13 @@ package org.mpeiRZA.Controllers.mService;
 
 import Services.SCL;
 import Services.TServices;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.geometry.Insets;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.control.*;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Border;
-import javafx.scene.layout.Pane;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.text.Font;
 import javafx.scene.text.Text;
 import javafx.scene.text.TextAlignment;
@@ -59,22 +60,43 @@ public class TabViewMService {
 
         for (IED i : ieds) {
             List<String> listOfServices = getServicesList(i.getServices());
-//            listOfServices.forEach(System.out::println);
+
             for (LD j : i.getLogicalDeviceList()) {
-                VBox vbox = new VBox();
-                vbox.setAlignment(Pos.CENTER_LEFT);
-                vbox.setSpacing(10);
+
+
+                VBox vbox1 = new VBox();
+                vbox1.setAlignment(Pos.CENTER_LEFT);
+                vbox1.setSpacing(10);
                 Label Title = new Label("Доступные сервисы");
                 Title.setFont(new Font("Serif",25));
-                vbox.getChildren().add(Title);
+                vbox1.getChildren().add(Title);
+
+                ObservableList<Label> labelsOfServices = FXCollections.observableArrayList();
+
+                vbox1.setStyle("-fx-border-color: black");
                 for (String s:listOfServices) {
                     try {method = servdesc.getClass().getMethod("get" + s); } catch (NoSuchMethodException ignored) {}
                     Label serv = new Label(s);
                     serv.setFont(new Font("Arial",14));
+                    labelsOfServices.add(serv);
                     try { serv.setTooltip(new Tooltip((String) method.invoke(servdesc)));} catch (IllegalAccessException | InvocationTargetException e) {e.printStackTrace();}
-                    vbox.getChildren().add(serv);
+//                    vbox1.getChildren().add(serv);
                 }
-                TabView.getTabs().add(new Tab(i.getName(), new ScrollPane(vbox)));
+                ListView<Label> list = new ListView(labelsOfServices);
+                vbox1.getChildren().add(list);
+                Button button1 = new Button("Доступные Logical Nodes");
+                Button button2 = new Button("Реализуемые сигналы");
+                button1.setMaxSize(Double.MAX_VALUE,Double.MAX_VALUE);
+                button2.setMaxSize(Double.MAX_VALUE,Double.MAX_VALUE);
+                TilePane tileButtons = new TilePane(Orientation.VERTICAL);
+                tileButtons.setPadding(new Insets(20, 10, 20, 0));
+                tileButtons.setHgap(10.0);
+                tileButtons.setVgap(8.0);
+                tileButtons.setAlignment(Pos.CENTER);
+                tileButtons.getChildren().addAll(button1, button2);
+
+                HBox hbox = new HBox(20,vbox1,tileButtons);
+                TabView.getTabs().add(new Tab(i.getName(), new ScrollPane(hbox)));
             }
         }
     }

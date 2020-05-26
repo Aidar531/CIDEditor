@@ -74,6 +74,16 @@ public class MainPageController  implements Initializable{
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Text txt = new Text("Программа запущена");
         self.myText.getChildren().add(txt);
+        // Временный запуск нужног файла
+        file = new File("/home/aidar/Desktop/MasterStudying#2/Kursach/CIDEditor/Project.cid");
+        if (file != null) {
+            XMlController = new XMLInOutMService();
+            TreeService = new TreeViewMService(treeView, file, XMlController, TabView);
+            TreeService.createTreeStructure();
+            TabService = new TabViewMService(TabView, file, XMlController);
+            TabService.showTabs();
+            myText.getChildren().add(new Text("\nОткрыт файл: " + file.getName()));
+        }
     }
 
     public void SaveTheFile(ActionEvent actionEvent) throws JAXBException {
