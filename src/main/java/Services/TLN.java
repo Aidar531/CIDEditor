@@ -17,6 +17,8 @@ public class TLN
     extends TAnyLN
 {
 
+
+
     @XmlAttribute(name = "lnClass", required = true)
     protected List<String> lnClass;
     @XmlAttribute(name = "inst", required = true)
@@ -30,6 +32,10 @@ public class TLN
             lnClass = new ArrayList<String>();
         }
         return this.lnClass;
+    }
+
+    public void setLnClass(List<String> lnClass) {
+        this.lnClass = lnClass;
     }
 
     public long getInst() {

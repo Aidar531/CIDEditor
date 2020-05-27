@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <SCL xmlns="http://www.iec.ch/61850/2006/SCL" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Private type="SchneiderElectric-SFT-Key">9A337527F5C70A4B7F983C3A32F376FA</Private>
   <Private type="SchneiderElectric-SFT-EditTime">2020-03-02 17:56:56</Private>
@@ -131,10 +131,10 @@
 		  
 		  </LN0>
 		  <LN inst="1" lnClass="PDIF" lnType="PDIF1" desc="Just PDIF"> </LN>
-          <LN inst="1" lnClass="IRMXU" lnType="IRMXU1" desc="Just IRMXU"> </LN>
-          <LN inst="1" lnClass="PHAR" lnType="PHAR1" desc="Just PHAR"> </LN>
-          <LN inst="1" lnClass="PTRC" lnType="PTRC1" desc="Just PTRC"> </LN>
-          <LN inst="1" lnClass="SVTR" lnType="SVTR1" desc="Just SVTR"> </LN>
+      <LN inst="1" lnClass="IRMXU" lnType="IRMXU1" desc="Just IRMXU"> </LN>
+      <LN inst="1" lnClass="PHAR" lnType="PHAR1" desc="Just PHAR"> </LN>
+      <LN inst="1" lnClass="PTRC" lnType="PTRC1" desc="Just PTRC"> </LN>
+      <LN inst="1" lnClass="SVTR" lnType="SVTR1" desc="Just SVTR"> </LN>
         </LDevice>
       </Server>
     </AccessPoint>

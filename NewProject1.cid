@@ -14,7 +14,7 @@
             <GetDirectory/>
             <GetDataObjectDefinition/>
             <GetDataSetValue/>
-            <DynDataSet/>
+            <DataSetDirectory/>
             <ReadWrite/>
             <TimerActivatedControl/>
             <GetCBValues/>
@@ -80,16 +80,16 @@
                             <TrgOps dchg="true" qchg="true"/>
                             <OptFields/>
                             <RptEnabled max="2">
-                                <ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC1" ldInst="LD0"/>
-                                <ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC2" ldInst="LD0"/>
+<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC1" ldInst="LD0"/>
+<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC2" ldInst="LD0"/>
                             </RptEnabled>
                         </ReportControl>
                         <ReportControl rptID="AA1G1Q01A1LD0/LLN0.rcbSecurity" confRev="200" buffered="true" bufTime="100" intgPd="3000" datSet="Security" name="rcbSecurity">
                             <TrgOps dchg="true" qchg="true"/>
                             <OptFields/>
                             <RptEnabled max="2">
-                                <ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC1" ldInst="LD0"/>
-                                <ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC2" ldInst="LD0"/>
+<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC1" ldInst="LD0"/>
+<ClientLN lnClass="IHMI" lnInst="1" iedName="AA1OPC2" ldInst="LD0"/>
                             </RptEnabled>
                         </ReportControl>
                         <Inputs>
@@ -123,6 +123,7 @@
                     <LN lnClass="PHAR" inst="1" lnType="PHAR1" desc="Just PHAR"/>
                     <LN lnClass="PTRC" inst="1" lnType="PTRC1" desc="Just PTRC"/>
                     <LN lnClass="SVTR" inst="1" lnType="SVTR1" desc="Just SVTR"/>
+                    <LN lnClass="RREC" inst="1" prefix="X" lnType="RREC2" desc="Example"/>
                 </LDevice>
             </Server>
         </AccessPoint>

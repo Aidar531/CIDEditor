@@ -2,26 +2,11 @@ package org.mpeiRZA.Controllers.mService;
 
 import Services.SCL;
 import Services.TIED;
-import Services.TLDevice;
-import javafx.event.Event;
-import javafx.event.EventDispatchChain;
-import javafx.event.EventDispatcher;
-import javafx.event.EventHandler;
-import javafx.scene.Node;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.TextFieldTreeCell;
-import javafx.scene.control.skin.TreeCellSkin;
-import javafx.scene.input.KeyEvent;
-import javafx.scene.input.MouseEvent;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import org.mpeiRZA.Controllers.MainPageController;
 import org.mpeiRZA.iec61850.*;
-import org.w3c.dom.Text;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -41,6 +26,8 @@ public class TreeViewMService {
         this.XMLController = XMLController;
         this.treeView = treeView;
         this.file = file;
+        SCLfile = XMLController.loadSClFile(file);
+        XMLController.setSCLfile(SCLfile);
     }
 
 
@@ -48,8 +35,6 @@ public class TreeViewMService {
         rootTree = new TreeItem<>(file.getName());
         TreeItem<String> IEDs = new TreeItem<>("IEDs");
         IEDs.setExpanded(true);
-        SCLfile = XMLController.getSClFile(file);
-        XMLController.setSCLfile(SCLfile);
         ieds = IEDExtractor.extractIEDList(SCLfile);
 
         for (IED i : ieds) {

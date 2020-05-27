@@ -26,6 +26,25 @@ public class LN {
 
     private String name;
     private String description;
+    private long inst;
+    private String prefix;
+
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
+    }
+
+
+    public Long getInst() {
+        return inst;
+    }
+
+    public void setInst(Long inst) {
+        this.inst = inst;
+    }
 
     public String getClassType() {
         return classType;

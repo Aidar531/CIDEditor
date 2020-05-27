@@ -186,6 +186,8 @@ public class IEDExtractor {
     private static LN extractLN(TLN source){
         LN ln = new LN();
         if(source.getLnType()==null) { MainPageController.writeLog("LN:  "+ StringOf(source) + "- is not contain type"); }
+        ln.setInst(source.getInst());
+        ln.setPrefix(source.getPrefix() != null ? source.getPrefix() : "");
         ln.setClassType((source.getLnClass()!=null && source.getLnClass().size()>0 && source.getLnClass().get(0)!=null) ? source.getLnClass().get(0) : "unknown");
         ln.setName(source.getLnType()!=null ? source.getLnType() : ln.getClassType());
         ln.setDescription(source.getDesc()!=null ? source.getDesc() : "unknown");

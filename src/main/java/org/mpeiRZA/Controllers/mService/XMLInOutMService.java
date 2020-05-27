@@ -16,13 +16,18 @@ import java.io.File;
 public class XMLInOutMService {
     private Marshaller marshaller;
     private JAXBContext jaxbContext;
-    private Object SCLfile = null;
 
-    public void setSCLfile(Object SCLfile) {
+    public SCL getSCLfile() {
+        return SCLfile;
+    }
+
+    private SCL SCLfile = null;
+
+    public void setSCLfile(SCL SCLfile) {
         this.SCLfile = SCLfile;
     }
 
-    public SCL getSClFile(File file) {
+    public SCL loadSClFile(File file) {
         SCL SCLfile = null;
         try {
             jaxbContext = JAXBContext.newInstance(SCL.class);

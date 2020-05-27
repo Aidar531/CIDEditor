@@ -36,7 +36,7 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException, URISyntaxException {
 
-        scene = new Scene(loadFXML("MainPage"), 1000, 600);
+        scene = new Scene(loadFXML("MainPage"), 1500, 800);
         stage.setTitle("CIDEditor");
         stage.setScene(scene);
         stage.show();
