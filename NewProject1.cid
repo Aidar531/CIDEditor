@@ -93,20 +93,20 @@
                             </RptEnabled>
                         </ReportControl>
                         <Inputs>
-                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.1.Value,140,13" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.1.Value,140,100" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.1.Value,140,32" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.2.Value,140,13" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.2.Value,140,100" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.2.Value,140,32" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.3.Value,140,13" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.3.Value,140,100" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.3.Value,140,32" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="stVal" intAddr="/DPC/ST/Dbpos/+/dchg/+/App4.GOOSERX.1.IN.3.Value,141,12" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL"/>
-                            <ExtRef daName="q" intAddr="/DPC/ST/Quality/+/qchg/+/App4.GOOSERX.1.IN.3.Value,141,100" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL"/>
-                            <ExtRef daName="t" intAddr="/DPC/ST/Timestamp/+/none/+/App4.GOOSERX.1.IN.3.Value,141,32" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL"/>
-                            <ExtRef daName="general" intAddr="/ACT/ST/BOOLEAN/+/dchg/+/-1,-1,-1" doName="Op" prefix="ZMR" lnClass="PDIS" lnInst="1" iedName="AA1G1Q02A1" ldInst="PROT"/>
-                            <ExtRef daName="general" intAddr="/ACT/ST/BOOLEAN/+/dchg/+/-1,-1,-1" doName="Op" prefix="ZMRA" lnClass="PDIS" lnInst="3" iedName="AA1G1Q02A1" ldInst="PROT"/>
+                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.1.Value,140,13" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.1.Value,140,100" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.1.Value,140,32" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.2.Value,140,13" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.2.Value,140,100" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.2.Value,140,32" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.3.Value,140,13" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.3.Value,140,100" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.3.Value,140,32" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="stVal" intAddr="/DPC/ST/Dbpos/+/dchg/+/App4.GOOSERX.1.IN.3.Value,141,12" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="q" intAddr="/DPC/ST/Quality/+/qchg/+/App4.GOOSERX.1.IN.3.Value,141,100" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="t" intAddr="/DPC/ST/Timestamp/+/none/+/App4.GOOSERX.1.IN.3.Value,141,32" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="general" intAddr="/ACT/ST/BOOLEAN/+/dchg/+/-1,-1,-1" doName="Op" prefix="ZMR" lnClass="PDIS" lnInst="1" iedName="AA1G1Q02A1" ldInst="PROT" srcLDInst="LD0" srcCBName="RTDS" serviceType="GOOSE"/>
+                            <ExtRef daName="general" intAddr="/ACT/ST/BOOLEAN/+/dchg/+/-1,-1,-1" doName="Op" prefix="ZMRA" lnClass="PDIS" lnInst="3" iedName="AA1G1Q02A1" ldInst="PROT" srcLDInst="LD0" srcCBName="RTDS" serviceType="GOOSE"/>
                         </Inputs>
                         <GSEControl appID="AA1G1Q02A1LD0/LLN0.gcbDATA1" confRev="100" datSet="DATA1" name="gcbDATA1">
                             <IEDName>AA1G1Q01A1</IEDName>
@@ -123,7 +123,7 @@
                     <LN lnClass="PHAR" inst="1" lnType="PHAR1" desc="Just PHAR"/>
                     <LN lnClass="PTRC" inst="1" lnType="PTRC1" desc="Just PTRC"/>
                     <LN lnClass="SVTR" inst="1" lnType="SVTR1" desc="Just SVTR"/>
-                    <LN lnClass="RREC" inst="1" prefix="X" lnType="RREC2" desc="Example"/>
+                    <LN lnClass="RMXU" inst="1" prefix="XB" lnType="RMXU" desc="EXAMPLE"/>
                 </LDevice>
             </Server>
         </AccessPoint>
@@ -213,20 +213,20 @@
                             </RptEnabled>
                         </ReportControl>
                         <Inputs>
-                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.1.Value,140,13" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.1.Value,140,100" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.1.Value,140,32" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.2.Value,140,13" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.2.Value,140,100" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.2.Value,140,32" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.3.Value,140,13" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.3.Value,140,100" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.3.Value,140,32" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON"/>
-                            <ExtRef daName="stVal" intAddr="/DPC/ST/Dbpos/+/dchg/+/App4.GOOSERX.1.IN.3.Value,141,12" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL"/>
-                            <ExtRef daName="q" intAddr="/DPC/ST/Quality/+/qchg/+/App4.GOOSERX.1.IN.3.Value,141,100" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL"/>
-                            <ExtRef daName="t" intAddr="/DPC/ST/Timestamp/+/none/+/App4.GOOSERX.1.IN.3.Value,141,32" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL"/>
-                            <ExtRef daName="general" intAddr="/ACT/ST/BOOLEAN/+/dchg/+/-1,-1,-1" doName="Op" prefix="ZMR" lnClass="PDIS" lnInst="1" iedName="AA1G1Q02A1" ldInst="PROT"/>
-                            <ExtRef daName="general" intAddr="/ACT/ST/BOOLEAN/+/dchg/+/-1,-1,-1" doName="Op" prefix="ZMRA" lnClass="PDIS" lnInst="3" iedName="AA1G1Q02A1" ldInst="PROT"/>
+                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.1.Value,140,13" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.1.Value,140,100" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.1.Value,140,32" doName="Ind1" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.2.Value,140,13" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.2.Value,140,100" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.2.Value,140,32" doName="Ind2" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="stVal" intAddr="/SPS/ST/BOOLEAN/+/dchg/+/App1.GOOSEBINRX.1.IN.3.Value,140,13" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="q" intAddr="/SPS/ST/Quality/+/qchg/+/App1.GOOSEBINRX.1.IN.3.Value,140,100" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="t" intAddr="/SPS/ST/Timestamp/+/none/+/App1.GOOSEBINRX.1.IN.3.Value,140,32" doName="Ind3" prefix="SP16" lnClass="GAPC" lnInst="1" iedName="AA1G1Q02A1" ldInst="MON" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="stVal" intAddr="/DPC/ST/Dbpos/+/dchg/+/App4.GOOSERX.1.IN.3.Value,141,12" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="q" intAddr="/DPC/ST/Quality/+/qchg/+/App4.GOOSERX.1.IN.3.Value,141,100" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="t" intAddr="/DPC/ST/Timestamp/+/none/+/App4.GOOSERX.1.IN.3.Value,141,32" doName="Pos" prefix="S" lnClass="XCBR" lnInst="1" iedName="AA1G1Q02A1" ldInst="CTRL" srcLDInst="LD0" srcCBName="gcbDATA1" serviceType="GOOSE"/>
+                            <ExtRef daName="general" intAddr="/ACT/ST/BOOLEAN/+/dchg/+/-1,-1,-1" doName="Op" prefix="ZMR" lnClass="PDIS" lnInst="1" iedName="AA1G1Q02A1" ldInst="PROT" srcLDInst="LD0" srcCBName="RTDS" serviceType="GOOSE"/>
+                            <ExtRef daName="general" intAddr="/ACT/ST/BOOLEAN/+/dchg/+/-1,-1,-1" doName="Op" prefix="ZMRA" lnClass="PDIS" lnInst="3" iedName="AA1G1Q02A1" ldInst="PROT" srcLDInst="LD0" srcCBName="RTDS" serviceType="GOOSE"/>
                         </Inputs>
                         <GSEControl appID="AA1G1Q02A1LD0/LLN0.gcbDATA1" confRev="100" datSet="DATA1" name="gcbDATA1">
                             <IEDName>AA1G1Q01A1</IEDName>

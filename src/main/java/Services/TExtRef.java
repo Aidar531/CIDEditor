@@ -38,6 +38,88 @@ public class TExtRef {
     @XmlAttribute(name = "ldInst", required = true)
     @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
     protected String ldInst;
+    @XmlAttribute(name = "desc", required = true)
+    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+    protected String desc;
+    @XmlAttribute(name = "srcLDInst", required = true)
+    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+    protected String srcLDInst;
+    @XmlAttribute(name = "srcPrefix", required = true)
+    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+    protected String srcPrefix;
+    @XmlAttribute(name = "srcLNClass", required = true)
+    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+    protected String srcLNClass;
+    @XmlAttribute(name = "srcLNInst", required = true)
+    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+    protected String srcLNInst;
+    @XmlAttribute(name = "srcCBName", required = true)
+    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+    protected String srcCBName;
+
+    public String getServiceType() {
+        return serviceType;
+    }
+
+    public void setServiceType(String serviceType) {
+        this.serviceType = serviceType;
+    }
+
+    @XmlAttribute(name = "serviceType", required = true)
+    @XmlJavaTypeAdapter(NormalizedStringAdapter.class)
+    protected String serviceType;
+
+    public void setLnClass(List<String> lnClass) {
+        this.lnClass = lnClass;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public void setDesc(String desc) {
+        this.desc = desc;
+    }
+
+    public String getSrcLDInst() {
+        return srcLDInst;
+    }
+
+    public void setSrcLDInst(String srcLDInst) {
+        this.srcLDInst = srcLDInst;
+    }
+
+    public String getSrcPrefix() {
+        return srcPrefix;
+    }
+
+    public void setSrcPrefix(String srcPrefix) {
+        this.srcPrefix = srcPrefix;
+    }
+
+    public String getSrcLNClass() {
+        return srcLNClass;
+    }
+
+    public void setSrcLNClass(String srcLNClass) {
+        this.srcLNClass = srcLNClass;
+    }
+
+    public String getSrcLNInst() {
+        return srcLNInst;
+    }
+
+    public void setSrcLNInst(String srcLNInst) {
+        this.srcLNInst = srcLNInst;
+    }
+
+    public String getSrcCBName() {
+        return srcCBName;
+    }
+
+    public void setSrcCBName(String srcCBName) {
+        this.srcCBName = srcCBName;
+    }
 
     public String getDaName() {
         return daName;

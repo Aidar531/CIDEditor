@@ -109,6 +109,7 @@ public class AddingController implements Initializable {
             prefix.clear();
             desc.clear();
             lnType.clear();
+            MainPageController.writeLog("Добавлен новый Logical Node " + newLN.getLnClass().toString());
         });
 
     }

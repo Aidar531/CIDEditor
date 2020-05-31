@@ -3,6 +3,7 @@ package org.mpeiRZA.Controllers.mService;
 import Services.SCL;
 import Services.TIED;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.TextFieldTreeCell;
 import javafx.scene.text.Font;
 import org.mpeiRZA.Controllers.MainPageController;
 import org.mpeiRZA.iec61850.*;
@@ -42,32 +43,38 @@ public class TreeViewMService {
             for (LD j:i.getLogicalDeviceList()) {
                 TreeItem<String> LD = new TreeItem<>(j.getName());
 
-                TreeItem<String> DSs = new TreeItem<String>("DataSets");
-
+                TreeItem<String> DSs = new TreeItem<String>("Signals");
+                TreeItem<String> GOOSE = new TreeItem<String>("GOOSE");
                 for (DS n:j.getGooseInputDS()) {
                     TreeItem<String> inputs = new TreeItem<String>("Inputs");
                     for (DO m:n.getDataObject()) {
                         TreeItem<String> DOins = new TreeItem<String>(m.getDataObjectName());
                         inputs.getChildren().add(DOins);
                     }
-                    DSs.getChildren().add(inputs);
+                    GOOSE.getChildren().add(inputs);
                 }
+                TreeItem<String> outputs = new TreeItem<String>("Outputs");
                 for (DS n:j.getGooseOutputDS()) {
                     TreeItem<String> signals = new TreeItem<String>(n.getDatSetName());
                     for (DO m:n.getDataObject()) {
                         TreeItem<String> DOins = new TreeItem<String>(m.getDataObjectName());
                         signals.getChildren().add(DOins);
                     }
-                    DSs.getChildren().add(signals);
+                   outputs.getChildren().add(signals);
                 }
+                GOOSE.getChildren().add(outputs);
+                DSs.getChildren().add(GOOSE);
+
+                TreeItem<String> MMS = new TreeItem<String>("MMS");
                 for (DS n:j.getMmsOutputDS()) {
                     TreeItem<String> signals = new TreeItem<String>(n.getDatSetName());
                     for (DO m:n.getDataObject()) {
                         TreeItem<String> DOins = new TreeItem<String>(m.getDataObjectName());
                         signals.getChildren().add(DOins);
                     }
-                    DSs.getChildren().add(signals);
+                    MMS.getChildren().add(signals);
                 }
+                DSs.getChildren().add(MMS);
                 LD.getChildren().add(DSs);
 
                 TreeItem<String> LNs = new TreeItem<String>("LogicalNodes");
@@ -89,13 +96,14 @@ public class TreeViewMService {
                 .selectedItemProperty()
                 .addListener((observable, oldValue, newValue) -> {
                     TreeItem trITM = (TreeItem) newValue;
+                    if (trITM != null) {
                     if (trITM.isLeaf()) {
                         openChousenElement(trITM);
-                    } });
-//        treeView.setCellFactory(TextFieldTreeCell.forTreeView());
+                    } }});
+        treeView.setCellFactory(TextFieldTreeCell.forTreeView());
 //        treeView.setOnMouseEntered(mouseEvent -> chooseTabView(mouseEvent));
 //        treeView.setOnMouseClicked(mouseEvent -> chooseTabView(mouseEvent));
-//        treeView.setOnEditCommit(event -> editCommit((TreeView.EditEvent) event));
+        treeView.setOnEditCommit(event -> editCommit((TreeView.EditEvent) event));
 
     }
 
@@ -131,8 +139,6 @@ public class TreeViewMService {
             }
         }
 
-        MainPageController.writeLog(event.getTreeItem().getValue() + " changed." +
-                " old = " + event.getOldValue() +
-                ", new = " + event.getNewValue());
+        MainPageController.writeLog(event.getTreeItem().getValue() + " Измененен на " + event.getNewValue());
     }
 }

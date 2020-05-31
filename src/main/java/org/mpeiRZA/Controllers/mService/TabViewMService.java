@@ -109,10 +109,11 @@ public class TabViewMService {
                 ListView<Label> list = new ListView(labelsOfServices);
                 vbox1.getChildren().add(list);
                 Button button1 = new Button("Доступные Logical Nodes");
-                Button button2 = new Button("Реализуемые сигналы");
+                Button button2 = new Button("Сигналы GOOSE");
+                Button button3 = new Button("Сигналы MMS");
                 button1.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
                 button2.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
-
+                button3.setMaxSize(Double.MAX_VALUE, Double.MAX_VALUE);
                 button1.setOnMouseClicked(mouseEvent -> {
                     try {
                         openNewPage(mouseEvent);
@@ -122,18 +123,24 @@ public class TabViewMService {
                 });
                 button2.setOnMouseClicked(mouseEvent -> {
                     try {
-                        openNewPageWithDataSets(mouseEvent);
+                        openNewPageWithDataSets(mouseEvent,1);
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 });
-
+                button3.setOnMouseClicked(mouseEvent -> {
+                    try {
+                        openNewPageWithDataSets(mouseEvent,2);
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
                 TilePane tileButtons = new TilePane(Orientation.VERTICAL);
                 tileButtons.setPadding(new Insets(20, 10, 20, 0));
                 tileButtons.setHgap(10.0);
                 tileButtons.setVgap(8.0);
                 tileButtons.setAlignment(Pos.CENTER);
-                tileButtons.getChildren().addAll(button1, button2);
+                tileButtons.getChildren().addAll(button1, button2,button3);
 
                 HBox hbox = new HBox(20, vbox1, tileButtons);
                 Tab tab = new Tab(i.getName(), new ScrollPane(hbox));
@@ -143,14 +150,15 @@ public class TabViewMService {
         }
     }
 
-    private void openNewPageWithDataSets(MouseEvent mouseEvent) throws IOException {
+    private void openNewPageWithDataSets(MouseEvent mouseEvent,int regim) throws IOException {
         FXMLLoader loader = new FXMLLoader(App.class.getResource("Pages/DataSets.fxml"));
         AnchorPane info = loader.load();
         TabView.getTabs().get(TabView.getSelectionModel().getSelectedIndex()).setContent(info);
         DataSetsController DataSetsInfo  = loader.getController();
         DataSetsInfo.setTabService(this);
-        DataSetsInfo.setSCLFile(SCLFile);
-
+        DataSetsInfo.setXMLController(XMLController);
+        if (regim == 1) DataSetsInfo.createContentForGoose(TabView.getSelectionModel().getSelectedIndex());
+        else if (regim == 2) DataSetsInfo.createContentForMMS(TabView.getSelectionModel().getSelectedIndex());
     }
 
     private void openNewPage(MouseEvent mouseEvent) throws IOException {
